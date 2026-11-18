@@ -283,8 +283,8 @@ export const projects: Project[] = [
     cardTitle: "Adobe Designs",
     cardBlurb: "Posters and stickers from school",
     tags: ["Illustrator", "Poster", "Graphic"],
-    cover: "/images/tEjZDLkvHBjbwmy32rmgxb7SeI.png",
-    coverAlt: "Adobe Creative Cloud logo on a rainbow gradient",
+    cover: "/images/Z6GBWEWcpgtbrLPZNJTKsSSU.jpg",
+    coverAlt: "Blue and cream star graphic",
     href: "/work/graphic-design",
     summary:
       "GRAPHIC DESIGN : ADOBE ILLUSTRATOR",
