@@ -11,6 +11,9 @@ export type Project = {
   sections: { heading: string; body: string[]; bullets?: string[] }[];
   gallery?: { src: string; alt: string }[];
   galleryLayout?: "stack" | "grid";
+  cardTitle?: string;
+  cardBlurb?: string;
+  tags: string[];
 };
 
 export const site = {
@@ -27,6 +30,9 @@ export const projects: Project[] = [
     slug: "ks-gift-assistant",
     title: "Tapestry: Kate Spade Gift Assistant",
     subtitle: "AI Chat Bot",
+    cardTitle: "Kate Spade Gift Assistant",
+    cardBlurb: "AI gift concierge for Tapestry",
+    tags: ["UX Design", "Conversational UI", "Retail"],
     cover: "/images/KEudC2r8tDqXwsfH4CJiGm16ZM.png",
     coverAlt: "Two phones showing the Kate Spade gift assistant conversation and product tiles",
     href: "/work/ks-gift-assistant",
@@ -69,6 +75,9 @@ export const projects: Project[] = [
     slug: "albertsons",
     title: "ALBERTSON AD Manager",
     subtitle: "Retail Media network",
+    cardTitle: "Albertsons Ad Manager",
+    cardBlurb: "Retail media network",
+    tags: ["Product", "Figma", "Retail media"],
     cover: "/images/EoWJTz8LBcEsMTnYNKUSHnk62Y.png",
     coverAlt: "Albertsons logo",
     href: "/work/albertsons",
@@ -126,6 +135,8 @@ export const projects: Project[] = [
     slug: "accessible-hawk",
     title: "Accessible Hawk",
     subtitle: "Mobile App",
+    cardBlurb: "Campus accessibility mobile app",
+    tags: ["Mobile", "Accessibility", "Figma"],
     cover: "/images/k8ngNZ9kXNvWQfr9W1xQjuJA.png",
     coverAlt: "Accessible Hawk Hub phones on a warm studio set",
     href: "/work/accessible-hawk",
@@ -166,6 +177,8 @@ export const projects: Project[] = [
     slug: "property-solutions",
     title: "Property Solutions",
     subtitle: "Property Management App",
+    cardBlurb: "Property management app",
+    tags: ["Mobile", "UX Design", "Figma"],
     cover: "/images/MEgVm1HGIbNkkJg70PXBHzRp4.png",
     coverAlt: "House and key icon on a purple background",
     href: "/work/property-solutions",
@@ -206,6 +219,9 @@ export const projects: Project[] = [
     slug: "region-of-waterloo",
     title: "Region Of Waterloo- FORMS",
     subtitle: "Redesigning Forms",
+    cardTitle: "Region of Waterloo Forms",
+    cardBlurb: "Accessible digital forms",
+    tags: ["UX Research", "Accessibility", "Figma"],
     cover: "/images/0GxcGSaAlfda4NykWrXEuYDRHwQ.png",
     coverAlt: "Region of Waterloo crest",
     href: "/work/region-of-waterloo",
@@ -264,6 +280,9 @@ export const projects: Project[] = [
     slug: "graphic-design",
     title: "ADOBE Designs",
     subtitle: "Posters & Stickers",
+    cardTitle: "Adobe Designs",
+    cardBlurb: "Posters and stickers from school",
+    tags: ["Illustrator", "Poster", "Graphic"],
     cover: "/images/tEjZDLkvHBjbwmy32rmgxb7SeI.png",
     coverAlt: "Adobe Creative Cloud logo on a rainbow gradient",
     href: "/work/graphic-design",
