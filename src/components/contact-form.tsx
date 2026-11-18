@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 type Status = "idle" | "sending" | "success" | "error";
 
 const fieldClass =
-  "h-10 rounded-md border-0 bg-neutral-100 px-3 text-sm shadow-none focus-visible:ring-1 focus-visible:ring-neutral-400";
+  "h-11 rounded-xl border-0 bg-[#f3f1ee] px-4 text-sm shadow-none placeholder:text-neutral-400 focus-visible:ring-2 focus-visible:ring-[#ffb8b9]";
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -53,14 +53,14 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <p role="status" className="text-sm">
-        Thank you.
+      <p role="status" className="rounded-xl bg-[#fff1f1] px-4 py-6 text-sm">
+        Thank you. I’ll get back to you soon.
       </p>
     );
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-3" noValidate>
+    <form onSubmit={onSubmit} className="grid gap-3.5" noValidate>
       <label className="sr-only" htmlFor="name">
         Name
       </label>
@@ -89,7 +89,7 @@ export function ContactForm() {
         id="message"
         name="message"
         placeholder="Type your Message"
-        className="min-h-[72px] rounded-md border-0 bg-neutral-100 px-3 py-2 text-sm shadow-none focus-visible:ring-1 focus-visible:ring-neutral-400"
+        className="min-h-[88px] rounded-xl border-0 bg-[#f3f1ee] px-4 py-3 text-sm shadow-none placeholder:text-neutral-400 focus-visible:ring-2 focus-visible:ring-[#ffb8b9]"
       />
       {status === "error" ? (
         <p role="alert" className="text-sm text-destructive">
@@ -99,7 +99,7 @@ export function ContactForm() {
       <Button
         type="submit"
         disabled={status === "sending"}
-        className="h-9 w-full rounded-md bg-neutral-900 text-white hover:bg-neutral-800"
+        className="h-11 w-full rounded-xl bg-neutral-900 text-sm font-medium text-white hover:bg-neutral-800"
       >
         {status === "sending" ? "Sending…" : "Submit"}
       </Button>

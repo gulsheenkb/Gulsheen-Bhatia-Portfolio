@@ -39,6 +39,11 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    background-image: radial-gradient(
+      1200px 500px at 85% -10%,
+      hsl(var(--blush) / 0.45),
+      transparent 60%
+    );
   }
 
   h1,

@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute right-0 top-6 hidden w-48 sm:block lg:w-64">
+        <div className="pointer-events-none absolute -right-6 top-4 hidden w-44 opacity-90 sm:block lg:right-8 lg:top-8 lg:w-56">
           <Image
             src="/images/GwDEfvBGJV4DDG63wb5wPOlQ79M.jpg"
             alt=""
@@ -20,28 +20,28 @@ export default function HomePage() {
             priority
           />
         </div>
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-16">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-20">
           <div className="min-w-0">
-            <p className="font-display text-xl font-medium sm:text-2xl">
+            <p className="font-display text-lg font-medium tracking-wide text-foreground/80 sm:text-xl">
               {site.role}
             </p>
-            <h1 className="mt-3 font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-[3.5rem]">
+            <h1 className="mt-3 max-w-xl text-balance font-display text-4xl font-semibold leading-[1.12] tracking-tight sm:text-5xl lg:text-[3.4rem]">
               {site.tagline}
             </h1>
             <Link
               href="/about"
-              className="mt-8 inline-flex h-12 items-center rounded-full bg-primary px-7 text-sm font-medium text-primary-foreground"
+              className="mt-8 inline-flex h-12 items-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground shadow-sm transition hover:bg-primary/90"
             >
               Learn More
             </Link>
           </div>
-          <div className="relative mx-auto w-[min(100%,18rem)] sm:w-[min(100%,20rem)]">
-            <div className="relative aspect-square overflow-hidden rounded-full border-[15px] border-white">
+          <div className="relative mx-auto w-[min(100%,17.5rem)] sm:w-[min(100%,20.5rem)]">
+            <div className="relative aspect-square overflow-hidden rounded-full border-[14px] border-white shadow-[0_18px_50px_rgba(20,40,32,0.12)]">
               <Image
                 src="/images/fj3HW7pYR9SZ43B34M1WNG6jS4U.jpg"
                 alt="Gulsheen Bhatia"
                 fill
-                sizes="320px"
+                sizes="328px"
                 className="object-cover object-[50%_18%]"
                 priority
               />
@@ -50,20 +50,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="px-4 py-6 sm:px-6 lg:px-8">
+      <section className="px-4 pb-2 pt-2 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-6xl">
-          <h2 className="font-display text-2xl font-semibold tracking-wide">
-            <Link href="/about">ABOUT ME</Link>
+          <h2 className="font-display text-xl font-semibold tracking-[0.08em]">
+            <Link href="/about" className="transition hover:opacity-70">
+              ABOUT ME
+            </Link>
           </h2>
         </div>
       </section>
 
-      <section id="work" className="px-4 py-10 sm:px-6 lg:px-8">
+      <section id="work" className="px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto w-full max-w-6xl">
-          <h2 className="mb-10 text-center font-display text-3xl font-semibold sm:text-4xl">
+          <h2 className="mb-12 text-center font-display text-3xl font-semibold tracking-tight sm:text-4xl">
             My Projects
           </h2>
-          <div className="grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
@@ -71,16 +73,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="px-4 py-12 sm:px-6 lg:px-8">
+      <section className="px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-5xl">
-          <h2 className="mb-8 text-center font-display text-2xl font-medium">
+          <h2 className="mb-9 text-center font-display text-2xl font-medium tracking-tight">
             Skills
           </h2>
-          <ul className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+          <ul className="flex flex-wrap items-center justify-center gap-4 sm:gap-5">
             {skills.map((skill) => (
               <li
                 key={skill.name}
-                className="relative h-16 w-[9.5rem] overflow-hidden rounded-2xl sm:h-[4.5rem] sm:w-44"
+                className="relative h-[4.25rem] w-40 overflow-hidden rounded-[1.15rem] shadow-[0_8px_24px_rgba(20,40,32,0.08)] ring-1 ring-black/5 transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(20,40,32,0.12)] sm:h-[4.6rem] sm:w-44"
               >
                 <Image
                   src={skill.src}
@@ -95,53 +97,55 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="mx-auto h-px w-full max-w-5xl bg-[#ffb8b9]" />
+      <div className="mx-auto h-px w-[min(100%-2rem,64rem)] bg-gradient-to-r from-transparent via-[#ffb8b9] to-transparent" />
 
-      <section className="px-4 py-14 sm:px-6 lg:px-8">
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto w-full max-w-3xl">
-          <h2 className="mb-10 text-center font-display text-2xl font-medium">
-            <Link href="/photography">Photography</Link>
+          <h2 className="mb-12 text-center font-display text-2xl font-medium tracking-tight">
+            <Link href="/photography" className="transition hover:opacity-70">
+              Photography
+            </Link>
           </h2>
-          <div className="relative mx-auto flex h-[220px] max-w-xl items-center justify-center sm:h-[280px]">
+          <div className="relative mx-auto flex h-[240px] max-w-lg items-center justify-center sm:h-[300px] sm:max-w-xl">
             {leftPhoto ? (
               <Link
                 href="/photography"
-                className="absolute left-[4%] z-0 size-28 overflow-hidden rounded-full sm:left-[6%] sm:size-40"
+                className="absolute left-[2%] z-0 size-[8.5rem] overflow-hidden rounded-full shadow-[0_10px_30px_rgba(20,40,32,0.14)] ring-4 ring-white transition duration-300 hover:z-20 hover:scale-[1.03] sm:left-[8%] sm:size-44"
               >
                 <Image
                   src={leftPhoto.src}
                   alt={leftPhoto.alt}
                   fill
                   className="object-cover"
-                  sizes="160px"
+                  sizes="176px"
                 />
               </Link>
             ) : null}
             {centerPhoto ? (
               <Link
                 href="/photography"
-                className="relative z-10 size-40 overflow-hidden rounded-full border-[6px] border-white sm:size-52 sm:border-8"
+                className="relative z-10 size-[11.5rem] overflow-hidden rounded-full border-[7px] border-white shadow-[0_16px_40px_rgba(20,40,32,0.16)] transition duration-300 hover:scale-[1.03] sm:size-[13.5rem] sm:border-[9px]"
               >
                 <Image
                   src={centerPhoto.src}
                   alt={centerPhoto.alt}
                   fill
                   className="object-cover"
-                  sizes="208px"
+                  sizes="216px"
                 />
               </Link>
             ) : null}
             {rightPhoto ? (
               <Link
                 href="/photography"
-                className="absolute right-[4%] z-0 size-28 overflow-hidden rounded-full sm:right-[6%] sm:size-40"
+                className="absolute right-[2%] z-0 size-[8.5rem] overflow-hidden rounded-full shadow-[0_10px_30px_rgba(20,40,32,0.14)] ring-4 ring-white transition duration-300 hover:z-20 hover:scale-[1.03] sm:right-[8%] sm:size-44"
               >
                 <Image
                   src={rightPhoto.src}
                   alt={rightPhoto.alt}
                   fill
                   className="object-cover"
-                  sizes="160px"
+                  sizes="176px"
                 />
               </Link>
             ) : null}
@@ -149,9 +153,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="px-4 pb-20 pt-6 sm:px-6 lg:px-8">
-        <div className="mx-auto grid w-full max-w-3xl items-start gap-8 sm:grid-cols-2 sm:gap-16">
-          <h2 className="font-display text-2xl font-semibold sm:pt-2">
+      <section id="contact" className="px-4 pb-24 pt-4 sm:px-6 lg:px-8">
+        <div className="mx-auto grid w-full max-w-3xl items-start gap-8 border-t border-black/5 pt-12 sm:grid-cols-2 sm:gap-16">
+          <h2 className="font-display text-2xl font-semibold tracking-tight sm:pt-1.5 sm:text-[1.7rem]">
             Let’s Connect
           </h2>
           <ContactForm />
