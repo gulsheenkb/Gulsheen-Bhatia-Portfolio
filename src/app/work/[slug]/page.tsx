@@ -40,7 +40,7 @@ export default async function ProjectPage({ params }: Props) {
           src={project.cover}
           alt={project.coverAlt}
           fill
-          className="object-contain p-6"
+          className="object-cover"
           sizes="(max-width: 896px) 100vw, 672px"
           priority
         />
