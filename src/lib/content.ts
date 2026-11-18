@@ -1,0 +1,295 @@
+export type Project = {
+  slug: string;
+  title: string;
+  subtitle: string;
+  cover: string;
+  coverAlt: string;
+  href: string;
+  tags: string[];
+  role?: string;
+  duration?: string;
+  summary: string;
+  sections: { heading: string; body: string[]; bullets?: string[] }[];
+  gallery?: { src: string; alt: string }[];
+};
+
+export const site = {
+  name: "Gulsheen Bhatia",
+  shortName: "GKB",
+  role: "Product Designer",
+  location: "Greater Toronto Area",
+  email: "hello@gulsheenbhatia.com",
+  linkedin: "https://www.linkedin.com/in/gulsheen-kaur-bhatia-9682a0227",
+  tagline: "Hi! I’m Gulsheen Bhatia",
+  intro:
+    "A product designer at Tapestry, shaping digital experiences for Coach and Kate Spade. I use research, systems, and craft to make shopping and services easier to use.",
+};
+
+export const projects: Project[] = [
+  {
+    slug: "ks-gift-assistant",
+    title: "Kate Spade Gift Assistant",
+    subtitle: "AI gift concierge for Tapestry",
+    cover: "/images/KEudC2r8tDqXwsfH4CJiGm16ZM.png",
+    coverAlt: "Two phones showing the Kate Spade gift assistant conversation and product tiles",
+    href: "/work/ks-gift-assistant",
+    tags: ["UX Design", "Conversational UI", "Retail"],
+    role: "UX Designer, Tapestry (Kate Spade)",
+    duration: "6 months",
+    summary:
+      "Kate Spade needed a better way to help gift shoppers who know the person they are buying for, but not the product. The Gift Concierge is a conversational shopping assistant on KateSpade.com that asks about the occasion, the recipient, and their style, then recommends gifts and explains why. It launched on April 13, 2026.",
+    sections: [
+      {
+        heading: "My contributions",
+        body: [
+          "I designed the Figma screens and conversation states, including how shoppers find the assistant, talk to it, and get to a bag.",
+        ],
+        bullets: [
+          "Welcome screen with “Find the perfect gift” and starter prompts such as “A gift for grad,” “For my best friend,” “Treating myself,” and “For the bride.”",
+          "Conversation and refinement: the assistant narrates its work, explains each recommendation, and offers tappable follow-ups like neutral tones or more options.",
+          "Shoppable tiles with price and Add to Bag in the thread, plus a handoff to the product page so the chat never becomes a dead end.",
+          "Switching intent mid-conversation without starting over.",
+          "Entry points across the gifting journey: navigation, a floating prompt, a banner, an inline tile, and a product-page button.",
+        ],
+      },
+      {
+        heading: "Challenges",
+        body: [],
+        bullets: [
+          "Uncertain intent: starter prompts, clarifying questions, and suggested replies turn a vague idea into a few taps.",
+          "Waiting on an AI response: skeleton tiles and status copy that changes with each step make the wait feel purposeful.",
+          "Being found: placements in the menu, gifting page, product grid, and product page each suit a different moment. The floating prompt can be dismissed so it never blocks products.",
+        ],
+      },
+      {
+        heading: "Outcome",
+        body: [
+          "The Gift Concierge went live on KateSpade.com after roughly two and a half months of testing. It was the first retail deployment of Amazon’s Agentic Shopping Assistant on AWS, built on Amazon Bedrock AgentCore with Anthropic’s Claude Haiku 4.5.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "albertsons",
+    title: "Albertsons Ad Manager",
+    subtitle: "Retail media network",
+    cover: "/images/MKyau8fFuG9oI7hPFxEvLCVAg.png",
+    coverAlt: "Albertsons ad platform welcome page",
+    href: "/work/albertsons",
+    tags: ["Product", "Figma", "Retail media"],
+    role: "Product Manager Intern, Publicis Sapient",
+    duration: "10 weeks",
+    summary:
+      "Albertsons needed a platform to manage and deploy targeted advertisements across stores and regions. I collaborated with a multidisciplinary team to design the experience from welcome through analytics.",
+    sections: [
+      {
+        heading: "What I designed",
+        body: [
+          "I created the Figma pages for the platform, covering the full ad operations loop.",
+        ],
+        bullets: [
+          "Welcome page introducing the platform and key actions",
+          "Ad management tools to upload, categorize, and run campaigns",
+          "Store-specific deployment for regions and banners",
+          "Analytics dashboard with performance graphs and metrics",
+          "Profile settings and a campaign calendar",
+          "Buttons, icons, and color schemes for a cohesive, accessible UI",
+        ],
+      },
+      {
+        heading: "Challenges and solutions",
+        body: [],
+        bullets: [
+          "Scalability: adaptable features so deployments could span many locations.",
+          "Accessibility: simpler flows for users with mixed technical expertise.",
+        ],
+      },
+      {
+        heading: "Outcome",
+        body: [
+          "The product helped Albertsons streamline ad deployment, improve targeting, and read campaign performance in real time.",
+        ],
+      },
+    ],
+    gallery: [
+      { src: "/images/MKyau8fFuG9oI7hPFxEvLCVAg.png", alt: "Albertsons welcome page with company logos" },
+      { src: "/images/zChwn2GSMQW0t7JfzKBO44bNLjQ.png", alt: "Albertsons ad platform screen" },
+      { src: "/images/VUrL1bY3cqIB4iA9C0vDrmsnJU.png", alt: "Albertsons dashboard screen" },
+      { src: "/images/BGg6mFVYgIsn8s8pwKXN6sNy0.png", alt: "Albertsons campaign screen" },
+    ],
+  },
+  {
+    slug: "accessible-hawk",
+    title: "Accessible Hawk",
+    subtitle: "Campus accessibility mobile app",
+    cover: "/images/k8ngNZ9kXNvWQfr9W1xQjuJA.png",
+    coverAlt: "Accessible Hawk Hub phones on a warm studio set",
+    href: "/work/accessible-hawk",
+    tags: ["Mobile", "Accessibility", "Figma"],
+    summary:
+      "Accessible Hawk is a mobile app that supports students with accessibility resources and campus navigation. It brings maps, booking, events, and feedback into one inclusive experience for Laurier.",
+    sections: [
+      {
+        heading: "Features",
+        body: [],
+        bullets: [
+          "Welcome screen with logo and tagline",
+          "Booking assistance with accessibility advisors",
+          "Interactive campus map with accessible routes, entrances, parking, and elevators",
+          "Filters for wheelchair access and other needs",
+          "Bus schedules, events calendar, and search",
+          "Profiles, information hub, and a feedback page for reporting issues",
+        ],
+      },
+      {
+        heading: "How we designed it",
+        body: [
+          "We designed each page in Figma, built the information architecture, and tested navigation against WCAG: high contrast, large text, and simple paths. Login and signup use large fields and clear actions.",
+        ],
+      },
+    ],
+    gallery: [
+      { src: "/images/sJYb2Pm2ueiKBYT6SPuYsB4Y0.png", alt: "Accessible Hawk loading, signup, and welcome screens" },
+      { src: "/images/URuFJCPUsnKjP1W57SXmuM98U.png", alt: "Accessible Hawk home screens" },
+      { src: "/images/h5xxYeNWXw5jVS0nmvjbbjr9YEE.png", alt: "Accessible Hawk map and booking" },
+    ],
+  },
+  {
+    slug: "property-solutions",
+    title: "Property Solutions",
+    subtitle: "Property management app",
+    cover: "/images/MEgVm1HGIbNkkJg70PXBHzRp4.png",
+    coverAlt: "House and key icon on a purple background",
+    href: "/work/property-solutions",
+    tags: ["Mobile", "Design system", "Marketplace"],
+    summary:
+      "Property Solutions is a mobile app for booking and offering property services — lawn care, pest control, roofing, and more — so people can connect, communicate, and transact in one place.",
+    sections: [
+      {
+        heading: "Product",
+        body: [],
+        bullets: [
+          "Dynamic search filters by location, type, and more",
+          "Inbox and notifications for requests and ongoing work",
+          "Profiles with history, reviews, and skills",
+          "Dual-purpose platform: book a service or offer your own",
+        ],
+      },
+      {
+        heading: "Process",
+        body: [
+          "I ran competitor analysis, sketched low-fidelity flows, and built a reusable component library so branding stayed consistent while we moved quickly.",
+        ],
+      },
+      {
+        heading: "Design highlights",
+        body: [
+          "Poppins for a clean, approachable typeface. Purple and turquoise for trust, with green, orange, and red status accents. Toggle switches, buttons, and cards share one visual language. The interface was designed to scale across phones and, later, web.",
+        ],
+      },
+      {
+        heading: "Role",
+        body: [
+          "I designed the full mobile interface in Figma, mapped onboarding through booking, and prototyped for testing.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "region-of-waterloo",
+    title: "Region of Waterloo Forms",
+    subtitle: "Capstone redesign",
+    cover: "/images/ppK5BWn1OqBYW9O053c2Xlc5nM.png",
+    coverAlt: "Redesigned Region of Waterloo resident form",
+    href: "/work/region-of-waterloo",
+    tags: ["Civic", "Accessibility", "Research"],
+    summary:
+      "For my UX Design capstone at Wilfrid Laurier University, I collaborated with the Region of Waterloo to redesign resident forms into a more intuitive, accessible, and unified system for their digital services portal.",
+    sections: [
+      {
+        heading: "The question",
+        body: [
+          "How might we create a standardized, accessible, and intuitive online form experience for residents while ensuring ease of use, respect for diverse needs, and compliance with regional guidelines?",
+        ],
+      },
+      {
+        heading: "My contributions",
+        body: [],
+        bullets: [
+          "User research: surveys, interviews, card sorting, and affinity diagramming",
+          "Information architecture for progressive form layouts",
+          "Prototype refinement in Figma for accessibility and mobile",
+          "Usability and A/B testing against the original PDFs",
+          "Client report that tied research to design decisions",
+        ],
+      },
+      {
+        heading: "Design process",
+        body: [
+          "We used Design Thinking and the Double Diamond, looping with users and stakeholders.",
+        ],
+        bullets: [
+          "Empathize & define: cluttered layouts, mobile friction, inaccessible PDFs; personas and journey maps",
+          "Ideate: sketches, storyboards, and wireframes with accessibility first",
+          "Prototype: three fidelities, then high-fidelity responsive layouts, payment, uploads, login, and confirmation",
+          "Test: A/B tests, timing, error rates, and satisfaction",
+        ],
+      },
+      {
+        heading: "Final deliverable",
+        body: [
+          "A scalable form template, progress bars and tooltips, WCAG 2.2 features (font resizing, high contrast, keyboard navigation), larger tap targets, and a clear confirmation with optional support.",
+        ],
+      },
+    ],
+    gallery: [
+      { src: "/images/ppK5BWn1OqBYW9O053c2Xlc5nM.png", alt: "Redesigned Region of Waterloo form with a five-step progress bar" },
+      { src: "/images/E71acb1CIgiw7xoyAHyjU99ZE.jpg", alt: "Form research and design artifact" },
+    ],
+  },
+  {
+    slug: "graphic-design",
+    title: "Adobe designs",
+    subtitle: "Posters and stickers",
+    cover: "/images/tEjZDLkvHBjbwmy32rmgxb7SeI.png",
+    coverAlt: "Adobe Creative Cloud logo on a rainbow gradient",
+    href: "/work/graphic-design",
+    tags: ["Illustration", "Posters"],
+    summary:
+      "During university I designed posters and stickers for events, campaigns, and assignments in Adobe Illustrator — work that still informs how I think about hierarchy, color, and craft.",
+    sections: [
+      {
+        heading: "Craft",
+        body: [
+          "These pieces were about getting a message across quickly: type that holds at a distance, color that carries a mood, and layouts that stay clear when printed or shared.",
+        ],
+      },
+    ],
+  },
+];
+
+export const skills = [
+  { name: "Figma", src: "/images/8uaiVznXcOuohanRWhRB7vgosM.png" },
+  { name: "Jira", src: "/images/h1IAfGsUtyTEdWm7n7R6LPh91g.png" },
+  { name: "Microsoft", src: "/images/FGsxjoz9IZvoZkjC3pQpwwifo.png" },
+  { name: "Adobe Creative Cloud", src: "/images/tEjZDLkvHBjbwmy32rmgxb7SeI.png" },
+];
+
+export const photos = [
+  {
+    src: "/images/ExspkDHiOy6XnbnShbdiHa03Gg.jpg",
+    alt: "Field of yellow black-eyed Susans",
+  },
+  {
+    src: "/images/31Js0UzxEmcLYCaPd5rQH8u8L24.jpg",
+    alt: "Red berries on green leaves",
+  },
+  {
+    src: "/images/vIC6ZWIc2yxb3ahAI0Uo15vd1Y.jpg",
+    alt: "Swallowtail butterfly on pine needles",
+  },
+];
+
+export function getProject(slug: string) {
+  return projects.find((p) => p.slug === slug);
+}
