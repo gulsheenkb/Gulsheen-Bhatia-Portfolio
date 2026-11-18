@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
+import { HeroShapes } from "@/components/hero-shapes";
 import { ProjectCard } from "@/components/project-card";
 import { photographyPreview, projects, site, skills } from "@/lib/content";
 
@@ -9,17 +10,7 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute -right-6 top-4 hidden w-44 opacity-90 sm:block lg:right-8 lg:top-8 lg:w-56">
-          <Image
-            src="/images/GwDEfvBGJV4DDG63wb5wPOlQ79M.jpg"
-            alt=""
-            width={990}
-            height={848}
-            className="h-auto w-full"
-            priority
-          />
-        </div>
+      <section className="relative overflow-x-clip">
         <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-20">
           <div className="min-w-0">
             <p className="font-display text-lg font-medium tracking-wide text-foreground/80 sm:text-xl">
@@ -36,7 +27,8 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="relative mx-auto w-[min(100%,17.5rem)] sm:w-[min(100%,20.5rem)]">
-            <div className="relative aspect-square overflow-hidden rounded-full border-[14px] border-white shadow-[0_18px_50px_rgba(20,40,32,0.12)]">
+            <HeroShapes />
+            <div className="relative z-10 aspect-square overflow-hidden rounded-full border-[14px] border-white shadow-[0_18px_50px_rgba(20,40,32,0.12)]">
               <Image
                 src="/images/fj3HW7pYR9SZ43B34M1WNG6jS4U.jpg"
                 alt="Gulsheen Bhatia"
