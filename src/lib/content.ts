@@ -291,9 +291,9 @@ export const projects: Project[] = [
 
 export const skills = [
   { name: "Figma", src: "/images/8uaiVznXcOuohanRWhRB7vgosM.png" },
+  { name: "Adobe Creative Cloud", src: "/images/tEjZDLkvHBjbwmy32rmgxb7SeI.png" },
   { name: "Jira", src: "/images/h1IAfGsUtyTEdWm7n7R6LPh91g.png" },
   { name: "Microsoft", src: "/images/FGsxjoz9IZvoZkjC3pQpwwifo.png" },
-  { name: "Adobe Creative Cloud", src: "/images/tEjZDLkvHBjbwmy32rmgxb7SeI.png" },
 ];
 
 export const photos = [
@@ -308,7 +308,7 @@ export const photos = [
   { src: "/images/photo-09.jpg", alt: "Hillside town lit up at night" },
 ];
 
-export const photographyPreview = photos.slice(0, 3);
+export const photographyPreview = [photos[0], photos[2], photos[3]];
 
 export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);

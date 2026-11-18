@@ -3,10 +3,12 @@
 import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 type Status = "idle" | "sending" | "success" | "error";
+
+const fieldClass =
+  "h-10 rounded-md border-0 bg-neutral-100 px-3 text-sm shadow-none focus-visible:ring-1 focus-visible:ring-neutral-400";
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -51,45 +53,54 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div
-        role="status"
-        className="rounded-3xl border border-blush-strong bg-blush/40 p-6 sm:p-8"
-      >
-        <p className="text-center">Thank you.</p>
-      </div>
+      <p role="status" className="text-sm">
+        Thank you.
+      </p>
     );
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-5" noValidate>
-      <div className="grid gap-2">
-        <Label htmlFor="name">Name</Label>
-        <Input id="name" name="name" placeholder="Your name" autoComplete="name" />
-      </div>
-      <div className="grid gap-2">
-        <Label htmlFor="email">Email</Label>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="you@example.com"
-          autoComplete="email"
-        />
-      </div>
-      <div className="grid gap-2">
-        <Label htmlFor="message">Message</Label>
-        <Textarea
-          id="message"
-          name="message"
-          placeholder="Type your message"
-        />
-      </div>
+    <form onSubmit={onSubmit} className="grid gap-3" noValidate>
+      <label className="sr-only" htmlFor="name">
+        Name
+      </label>
+      <Input
+        id="name"
+        name="name"
+        placeholder="Name"
+        autoComplete="name"
+        className={fieldClass}
+      />
+      <label className="sr-only" htmlFor="email">
+        Email
+      </label>
+      <Input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="Email"
+        autoComplete="email"
+        className={fieldClass}
+      />
+      <label className="sr-only" htmlFor="message">
+        Message
+      </label>
+      <Textarea
+        id="message"
+        name="message"
+        placeholder="Type your Message"
+        className="min-h-[72px] rounded-md border-0 bg-neutral-100 px-3 py-2 text-sm shadow-none focus-visible:ring-1 focus-visible:ring-neutral-400"
+      />
       {status === "error" ? (
         <p role="alert" className="text-sm text-destructive">
           {message}
         </p>
       ) : null}
-      <Button type="submit" size="lg" disabled={status === "sending"}>
+      <Button
+        type="submit"
+        disabled={status === "sending"}
+        className="h-9 w-full rounded-md bg-neutral-900 text-white hover:bg-neutral-800"
+      >
         {status === "sending" ? "Sending…" : "Submit"}
       </Button>
     </form>

@@ -5,6 +5,8 @@ import { ProjectCard } from "@/components/project-card";
 import { photographyPreview, projects, site, skills } from "@/lib/content";
 
 export default function HomePage() {
+  const [leftPhoto, centerPhoto, rightPhoto] = photographyPreview;
+
   return (
     <>
       <section className="relative overflow-hidden">
@@ -69,19 +71,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto w-full max-w-6xl">
-          <h2 className="mb-10 text-center font-display text-3xl font-semibold sm:text-4xl">
+      <section className="px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-5xl">
+          <h2 className="mb-8 text-center font-display text-2xl font-medium">
             Skills
           </h2>
-          <ul className="flex flex-wrap items-center justify-center gap-8 sm:gap-14">
+          <ul className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             {skills.map((skill) => (
-              <li key={skill.name} className="relative h-12 w-36 sm:h-16 sm:w-44">
+              <li
+                key={skill.name}
+                className="relative h-16 w-[9.5rem] overflow-hidden rounded-2xl sm:h-[4.5rem] sm:w-44"
+              >
                 <Image
                   src={skill.src}
                   alt={skill.name}
                   fill
-                  className="object-contain"
+                  className="object-cover"
                   sizes="176px"
                 />
               </li>
@@ -90,34 +95,63 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mx-auto w-full max-w-6xl">
-          <h2 className="mb-8 text-center font-display text-3xl font-semibold sm:text-4xl">
+      <div className="mx-auto h-px w-full max-w-5xl bg-[#ffb8b9]" />
+
+      <section className="px-4 py-14 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-3xl">
+          <h2 className="mb-10 text-center font-display text-2xl font-medium">
             <Link href="/photography">Photography</Link>
           </h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {photographyPreview.map((photo) => (
+          <div className="relative mx-auto flex h-[220px] max-w-xl items-center justify-center sm:h-[280px]">
+            {leftPhoto ? (
               <Link
-                key={photo.src}
                 href="/photography"
-                className="relative aspect-[4/5] overflow-hidden"
+                className="absolute left-[4%] z-0 size-28 overflow-hidden rounded-full sm:left-[6%] sm:size-40"
               >
                 <Image
-                  src={photo.src}
-                  alt={photo.alt}
+                  src={leftPhoto.src}
+                  alt={leftPhoto.alt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 640px) 100vw, 33vw"
+                  sizes="160px"
                 />
               </Link>
-            ))}
+            ) : null}
+            {centerPhoto ? (
+              <Link
+                href="/photography"
+                className="relative z-10 size-40 overflow-hidden rounded-full border-[6px] border-white sm:size-52 sm:border-8"
+              >
+                <Image
+                  src={centerPhoto.src}
+                  alt={centerPhoto.alt}
+                  fill
+                  className="object-cover"
+                  sizes="208px"
+                />
+              </Link>
+            ) : null}
+            {rightPhoto ? (
+              <Link
+                href="/photography"
+                className="absolute right-[4%] z-0 size-28 overflow-hidden rounded-full sm:right-[6%] sm:size-40"
+              >
+                <Image
+                  src={rightPhoto.src}
+                  alt={rightPhoto.alt}
+                  fill
+                  className="object-cover"
+                  sizes="160px"
+                />
+              </Link>
+            ) : null}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto w-full max-w-xl">
-          <h2 className="mb-8 text-center font-display text-3xl font-semibold sm:text-4xl">
+      <section id="contact" className="px-4 pb-20 pt-6 sm:px-6 lg:px-8">
+        <div className="mx-auto grid w-full max-w-3xl items-start gap-8 sm:grid-cols-2 sm:gap-16">
+          <h2 className="font-display text-2xl font-semibold sm:pt-2">
             Let’s Connect
           </h2>
           <ContactForm />
