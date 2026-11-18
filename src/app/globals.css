@@ -69,37 +69,39 @@
 @keyframes blob-float {
   0%,
   100% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0);
   }
   50% {
-    transform: translate(6px, -10px) rotate(-8deg);
+    transform: translate(4px, -6px);
   }
 }
 
 @keyframes star-twinkle {
   0%,
   100% {
-    transform: rotate(0deg) scale(1);
+    opacity: 1;
+    transform: scale(1);
   }
   50% {
-    transform: rotate(14deg) scale(1.08);
+    opacity: 0.78;
+    transform: scale(1.03);
   }
 }
 
 .animate-sun-spin {
-  animation: sun-spin 28s linear infinite;
+  animation: sun-spin 90s linear infinite;
   transform-box: fill-box;
   transform-origin: center;
 }
 
 .animate-blob-float {
-  animation: blob-float 6.5s ease-in-out infinite;
+  animation: blob-float 18s ease-in-out infinite;
   transform-box: fill-box;
   transform-origin: center;
 }
 
 .animate-star-twinkle {
-  animation: star-twinkle 4.2s ease-in-out infinite;
+  animation: star-twinkle 12s ease-in-out infinite;
   transform-box: fill-box;
   transform-origin: center;
 }

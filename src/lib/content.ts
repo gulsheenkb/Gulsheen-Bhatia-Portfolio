@@ -880,3 +880,9 @@ export const photographyPreview = [photos[0], photos[4], photos[1]];
 export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);
 }
+
+export function getNextProject(slug: string) {
+  const index = projects.findIndex((p) => p.slug === slug);
+  if (index < 0) return undefined;
+  return projects[(index + 1) % projects.length];
+}

@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { CaseBlock, CaseImage, Project } from "@/lib/content";
+import { getNextProject } from "@/lib/content";
 
 function Shot({
   image,
@@ -161,6 +163,8 @@ function BlockView({ block }: { block: CaseBlock }) {
 }
 
 export function CaseStudy({ project }: { project: Project }) {
+  const next = getNextProject(project.slug);
+
   return (
     <article>
       <header className="bg-[#f7ebe8] px-4 py-12 text-center sm:py-16">
@@ -173,6 +177,29 @@ export function CaseStudy({ project }: { project: Project }) {
           <BlockView key={i} block={block} />
         ))}
       </div>
+      {next ? (
+        <nav className="border-t border-border px-4 py-10 sm:px-8">
+          <Link
+            href={next.href}
+            className="mx-auto flex w-full max-w-[1100px] items-center justify-between gap-6 rounded-2xl bg-[#f7ebe8] px-5 py-5 transition hover:bg-[#f3e0dc] sm:px-8"
+          >
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                Next project
+              </p>
+              <p className="mt-1 font-display text-xl font-semibold sm:text-2xl">
+                {next.cardTitle ?? next.title}
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {next.cardBlurb ?? next.subtitle}
+              </p>
+            </div>
+            <span className="shrink-0 text-2xl" aria-hidden>
+              →
+            </span>
+          </Link>
+        </nav>
+      ) : null}
     </article>
   );
 }

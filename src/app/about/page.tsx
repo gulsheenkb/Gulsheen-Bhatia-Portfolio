@@ -22,7 +22,7 @@ export default function AboutPage() {
         </div>
         <div className="min-w-0">
           <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-            HELLO
+            HELLO 👋
           </h1>
           <div className="mt-6 space-y-5 text-base leading-relaxed sm:text-lg">
             <p>
