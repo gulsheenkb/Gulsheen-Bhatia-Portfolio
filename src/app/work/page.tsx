@@ -8,18 +8,11 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-      <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
-        Portfolio
-      </p>
-      <h1 className="mt-3 max-w-2xl font-display text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
-        Work that makes gifting, campus life, and civic services easier
+    <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+      <h1 className="mb-10 text-center font-display text-3xl font-semibold sm:text-4xl">
+        My Projects
       </h1>
-      <p className="mt-4 max-w-2xl text-muted-foreground">
-        Case studies from Tapestry, Publicis Sapient, Laurier, and the Region of
-        Waterloo — plus graphic work from school.
-      </p>
-      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}

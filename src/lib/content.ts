@@ -5,7 +5,6 @@ export type Project = {
   cover: string;
   coverAlt: string;
   href: string;
-  tags: string[];
   role?: string;
   duration?: string;
   summary: string;
@@ -18,22 +17,18 @@ export const site = {
   shortName: "GKB",
   role: "Product Designer",
   location: "Greater Toronto Area",
-  email: "hello@gulsheenbhatia.com",
   linkedin: "https://www.linkedin.com/in/gulsheen-kaur-bhatia-9682a0227",
   tagline: "Hi! I’m Gulsheen Bhatia",
-  intro:
-    "A product designer at Tapestry, shaping digital experiences for Coach and Kate Spade. I use research, systems, and craft to make shopping and services easier to use.",
 };
 
 export const projects: Project[] = [
   {
     slug: "ks-gift-assistant",
-    title: "Kate Spade Gift Assistant",
-    subtitle: "AI gift concierge for Tapestry",
+    title: "Tapestry: Kate Spade Gift Assistant",
+    subtitle: "AI Chat Bot",
     cover: "/images/KEudC2r8tDqXwsfH4CJiGm16ZM.png",
     coverAlt: "Two phones showing the Kate Spade gift assistant conversation and product tiles",
     href: "/work/ks-gift-assistant",
-    tags: ["UX Design", "Conversational UI", "Retail"],
     role: "UX Designer, Tapestry (Kate Spade)",
     duration: "6 months",
     summary:
@@ -71,12 +66,11 @@ export const projects: Project[] = [
   },
   {
     slug: "albertsons",
-    title: "Albertsons Ad Manager",
-    subtitle: "Retail media network",
-    cover: "/images/MKyau8fFuG9oI7hPFxEvLCVAg.png",
-    coverAlt: "Albertsons ad platform welcome page",
+    title: "ALBERTSON AD Manager",
+    subtitle: "Retail Media network",
+    cover: "/images/EoWJTz8LBcEsMTnYNKUSHnk62Y.png",
+    coverAlt: "Albertsons logo",
     href: "/work/albertsons",
-    tags: ["Product", "Figma", "Retail media"],
     role: "Product Manager Intern, Publicis Sapient",
     duration: "10 weeks",
     summary:
@@ -121,11 +115,10 @@ export const projects: Project[] = [
   {
     slug: "accessible-hawk",
     title: "Accessible Hawk",
-    subtitle: "Campus accessibility mobile app",
+    subtitle: "Mobile App",
     cover: "/images/k8ngNZ9kXNvWQfr9W1xQjuJA.png",
     coverAlt: "Accessible Hawk Hub phones on a warm studio set",
     href: "/work/accessible-hawk",
-    tags: ["Mobile", "Accessibility", "Figma"],
     summary:
       "Accessible Hawk is a mobile app that supports students with accessibility resources and campus navigation. It brings maps, booking, events, and feedback into one inclusive experience for Laurier.",
     sections: [
@@ -157,11 +150,10 @@ export const projects: Project[] = [
   {
     slug: "property-solutions",
     title: "Property Solutions",
-    subtitle: "Property management app",
+    subtitle: "Property Management App",
     cover: "/images/MEgVm1HGIbNkkJg70PXBHzRp4.png",
     coverAlt: "House and key icon on a purple background",
     href: "/work/property-solutions",
-    tags: ["Mobile", "Design system", "Marketplace"],
     summary:
       "Property Solutions is a mobile app for booking and offering property services — lawn care, pest control, roofing, and more — so people can connect, communicate, and transact in one place.",
     sections: [
@@ -197,12 +189,11 @@ export const projects: Project[] = [
   },
   {
     slug: "region-of-waterloo",
-    title: "Region of Waterloo Forms",
-    subtitle: "Capstone redesign",
-    cover: "/images/ppK5BWn1OqBYW9O053c2Xlc5nM.png",
-    coverAlt: "Redesigned Region of Waterloo resident form",
+    title: "Region Of Waterloo- FORMS",
+    subtitle: "Redesigning Forms",
+    cover: "/images/0GxcGSaAlfda4NykWrXEuYDRHwQ.png",
+    coverAlt: "Region of Waterloo crest",
     href: "/work/region-of-waterloo",
-    tags: ["Civic", "Accessibility", "Research"],
     summary:
       "For my UX Design capstone at Wilfrid Laurier University, I collaborated with the Region of Waterloo to redesign resident forms into a more intuitive, accessible, and unified system for their digital services portal.",
     sections: [
@@ -249,19 +240,18 @@ export const projects: Project[] = [
   },
   {
     slug: "graphic-design",
-    title: "Adobe designs",
-    subtitle: "Posters and stickers",
+    title: "ADOBE Designs",
+    subtitle: "Posters & Stickers",
     cover: "/images/tEjZDLkvHBjbwmy32rmgxb7SeI.png",
     coverAlt: "Adobe Creative Cloud logo on a rainbow gradient",
     href: "/work/graphic-design",
-    tags: ["Illustration", "Posters"],
     summary:
-      "During university I designed posters and stickers for events, campaigns, and assignments in Adobe Illustrator — work that still informs how I think about hierarchy, color, and craft.",
+      "GRAPHIC DESIGN : ADOBE ILLUSTRATOR",
     sections: [
       {
-        heading: "Craft",
+        heading: "",
         body: [
-          "These pieces were about getting a message across quickly: type that holds at a distance, color that carries a mood, and layouts that stay clear when printed or shared.",
+          "I worked on graphic design projects during university, creating visually engaging posters for events, campaigns, and assignments, showcasing my creativity and design skills.",
         ],
       },
     ],

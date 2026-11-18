@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: `${site.name} — ${site.role}`,
     template: `%s — ${site.name}`,
   },
-  description: site.intro,
+  description: `${site.role}. ${site.tagline}`,
 };
 
 export default function RootLayout({

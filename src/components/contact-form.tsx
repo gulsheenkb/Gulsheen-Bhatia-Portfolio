@@ -45,7 +45,7 @@ export function ContactForm() {
       form.reset();
     } catch {
       setStatus("error");
-      setMessage("Something went wrong. Please try again or write on LinkedIn.");
+      setMessage("Something went wrong. Please try again.");
     }
   }
 
@@ -55,11 +55,7 @@ export function ContactForm() {
         role="status"
         className="rounded-3xl border border-blush-strong bg-blush/40 p-6 sm:p-8"
       >
-        <h3 className="font-display text-2xl font-semibold">Message received</h3>
-        <p className="mt-2 text-muted-foreground">
-          Thank you — I’ll get back to you as soon as I can. This preview keeps
-          a copy locally and does not send email until a mailbox is connected.
-        </p>
+        <p className="text-center">Thank you.</p>
       </div>
     );
   }

@@ -18,7 +18,6 @@ import { cn } from "@/lib/utils";
 const links = [
   { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
-  { href: "/photography", label: "Photography" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -26,26 +25,26 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:h-[4.5rem] sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-40 bg-background">
+      <div className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-2.5 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className="shrink-0 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           <Image
             src="/images/dos57l1HX1dirlyvfBYIUSV8KIQ.png"
-            alt="GKB monogram"
-            width={40}
-            height={40}
-            className="h-9 w-9 sm:h-10 sm:w-10"
+            alt="Logo"
+            width={48}
+            height={48}
+            className="h-10 w-10 sm:h-12 sm:w-12"
             priority
           />
-          <span className="truncate font-display text-sm font-semibold tracking-tight sm:text-base">
-            Gulsheen Bhatia
-          </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
+        <nav
+          className="hidden items-center gap-10 text-base font-medium md:flex"
+          aria-label="Primary"
+        >
           {links.map((link) => {
             const active =
               pathname === link.href || pathname.startsWith(`${link.href}/`);
@@ -54,10 +53,8 @@ export function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
-                  active
-                    ? "bg-blush text-foreground"
-                    : "text-muted-foreground hover:bg-blush/50 hover:text-foreground",
+                  "hover:opacity-70",
+                  active && "underline underline-offset-8",
                 )}
               >
                 {link.label}

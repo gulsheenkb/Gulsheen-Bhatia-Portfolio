@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { site } from "@/lib/content";
+import { ContactForm } from "@/components/contact-form";
 
 export const metadata: Metadata = {
   title: "About",
@@ -10,12 +8,12 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <article className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-      <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
-        <div className="relative mx-auto w-full max-w-sm overflow-hidden rounded-[2rem] border-[6px] border-blush-strong bg-secondary lg:max-w-none">
+    <article className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+      <div className="grid items-center gap-10 lg:grid-cols-2">
+        <div className="relative mx-auto w-full max-w-sm overflow-hidden rounded-full">
           <Image
             src="/images/NKKuBY6BDu9VaLCFPsWze8Vjk.png"
-            alt="Graduation portrait of Gulsheen Bhatia"
+            alt="Gulsheen Bhatia"
             width={660}
             height={864}
             className="h-auto w-full"
@@ -23,19 +21,17 @@ export default function AboutPage() {
           />
         </div>
         <div className="min-w-0">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
-            About me
-          </p>
-          <h1 className="mt-3 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-            Hello
+          <h1 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+            HELLO
           </h1>
-          <div className="mt-6 space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <div className="mt-6 space-y-5 text-base leading-relaxed sm:text-lg">
             <p>
               I’m Gulsheen Kaur Bhatia, a UX designer at Tapestry and a
               graduate of Wilfrid Laurier University’s User Experience Design
-              program. For the past eight months I’ve worked on digital
+              program. For the past eight months, I’ve worked on digital
               experiences across the Coach and Kate Spade brands, using design
-              to solve real problems and make technology easier to use.
+              to solve real problems and make technology easier for people to
+              use.
             </p>
             <p>
               I was born in the US, raised in Delhi, and moved to Canada four
@@ -54,17 +50,13 @@ export default function AboutPage() {
               designers on user-friendly solutions that make an impact.
             </p>
           </div>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg">
-              <Link href="/contact">Let’s connect</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <a href={site.linkedin} rel="noreferrer" target="_blank">
-                LinkedIn
-              </a>
-            </Button>
-          </div>
         </div>
+      </div>
+      <div className="mx-auto mt-16 w-full max-w-xl">
+        <h2 className="mb-8 text-center font-display text-3xl font-semibold">
+          Let’s Connect
+        </h2>
+        <ContactForm />
       </div>
     </article>
   );
