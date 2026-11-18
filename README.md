@@ -23,3 +23,17 @@ npm start
 ```
 
 The contact form validates on the server and shows a thank-you state. It does not send email until a mailbox is connected.
+
+## Deploy on Vercel
+
+This is a standard Next.js app. The lasting portfolio URL is a `*.vercel.app` address on your Vercel account.
+
+1. Sign in at [vercel.com](https://vercel.com) (GitHub login is fine).
+2. Import this repository, or from the project folder run:
+
+```bash
+npx vercel login
+npx vercel --prod
+```
+
+3. Use the production URL Vercel prints (something like `https://gulsheen-bhatia.vercel.app`) as the portfolio link. You can attach a custom domain later in the Vercel project settings.
