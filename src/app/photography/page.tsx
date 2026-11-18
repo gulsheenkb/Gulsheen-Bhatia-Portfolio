@@ -7,25 +7,11 @@ export const metadata: Metadata = {
 };
 
 export default function PhotographyPage() {
-  const bySrc = new Map(photos.map((photo) => [photo.src, photo]));
-  const pick = (srcs: string[]) =>
-    srcs.map((src) => bySrc.get(src)).filter((photo) => photo != null);
-  const left = pick([
-    "/images/photo-01.jpg",
-    "/images/photo-03.jpg",
-    "/images/photo-06.jpg",
-    "/images/photo-08.jpg",
-  ]);
-  const right = pick([
-    "/images/photo-02.jpg",
-    "/images/photo-04.jpg",
-    "/images/photo-05.jpg",
-    "/images/photo-07.jpg",
-  ]);
-  const wide = bySrc.get("/images/photo-09.jpg");
+  const left = photos.filter((_, i) => i % 2 === 0);
+  const right = photos.filter((_, i) => i % 2 === 1);
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+    <div className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
       <h1 className="mb-10 font-display text-3xl font-semibold sm:text-5xl">
         PHOTOGRAPHY
       </h1>
@@ -36,9 +22,10 @@ export default function PhotographyPage() {
               key={photo.src}
               src={photo.src}
               alt={photo.alt}
-              width={800}
-              height={1000}
+              width={photo.width}
+              height={photo.height}
               className="h-auto w-full"
+              sizes="(max-width: 640px) 100vw, 50vw"
             />
           ))}
         </div>
@@ -48,24 +35,14 @@ export default function PhotographyPage() {
               key={photo.src}
               src={photo.src}
               alt={photo.alt}
-              width={800}
-              height={1000}
+              width={photo.width}
+              height={photo.height}
               className="h-auto w-full"
+              sizes="(max-width: 640px) 100vw, 50vw"
             />
           ))}
         </div>
       </div>
-      {wide ? (
-        <div className="mt-4">
-          <Image
-            src={wide.src}
-            alt={wide.alt}
-            width={1600}
-            height={1100}
-            className="h-auto w-full"
-          />
-        </div>
-      ) : null}
     </div>
   );
 }
