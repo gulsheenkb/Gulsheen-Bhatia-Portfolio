@@ -14,7 +14,7 @@ export function ProjectCard({ project }: { project: Project }) {
           alt={project.coverAlt}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 315px"
-          className="object-contain p-4"
+          className="object-cover"
         />
       </div>
       <div className="min-w-0 px-1">
