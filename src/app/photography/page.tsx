@@ -7,9 +7,22 @@ export const metadata: Metadata = {
 };
 
 export default function PhotographyPage() {
-  const left = photos.filter((_, i) => i < 8 && i % 2 === 0);
-  const right = photos.filter((_, i) => i < 8 && i % 2 === 1);
-  const wide = photos[8];
+  const bySrc = new Map(photos.map((photo) => [photo.src, photo]));
+  const pick = (srcs: string[]) =>
+    srcs.map((src) => bySrc.get(src)).filter((photo) => photo != null);
+  const left = pick([
+    "/images/photo-01.jpg",
+    "/images/photo-03.jpg",
+    "/images/photo-06.jpg",
+    "/images/photo-08.jpg",
+  ]);
+  const right = pick([
+    "/images/photo-02.jpg",
+    "/images/photo-04.jpg",
+    "/images/photo-05.jpg",
+    "/images/photo-07.jpg",
+  ]);
+  const wide = bySrc.get("/images/photo-09.jpg");
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
