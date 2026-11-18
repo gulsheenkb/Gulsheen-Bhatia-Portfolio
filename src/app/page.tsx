@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { PortfolioImage as Image } from "@/components/portfolio-image";
 import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
 import { HeroShapes } from "@/components/hero-shapes";

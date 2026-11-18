@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { PortfolioImage as Image } from "@/components/portfolio-image";
 import { ContactForm } from "@/components/contact-form";
 
 export const metadata: Metadata = {

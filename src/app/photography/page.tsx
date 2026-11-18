@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { PortfolioImage as Image } from "@/components/portfolio-image";
 import { photos } from "@/lib/content";
 
 export const metadata: Metadata = {

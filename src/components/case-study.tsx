@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { PortfolioImage as Image } from "@/components/portfolio-image";
 import Link from "next/link";
 import type { CaseBlock, CaseImage, Project } from "@/lib/content";
 import { getNextProject } from "@/lib/content";
