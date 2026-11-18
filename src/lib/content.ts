@@ -10,6 +10,7 @@ export type Project = {
   summary: string;
   sections: { heading: string; body: string[]; bullets?: string[] }[];
   gallery?: { src: string; alt: string }[];
+  galleryLayout?: "stack" | "grid";
 };
 
 export const site = {
@@ -276,8 +277,14 @@ export const projects: Project[] = [
         ],
       },
     ],
+    galleryLayout: "grid",
     gallery: [
-      { src: "/images/tEjZDLkvHBjbwmy32rmgxb7SeI.png", alt: "Adobe Creative Cloud" },
+      { src: "/images/adobe-poster-01.png", alt: "Santa’s Bingo Bash poster" },
+      { src: "/images/adobe-poster-02.png", alt: "Christmas Karaoke poster" },
+      { src: "/images/adobe-poster-03.png", alt: "Bobbi Brown Spazaram circular poster" },
+      { src: "/images/adobe-poster-04.png", alt: "Bobbi Brown’s DJ Night poster" },
+      { src: "/images/adobe-poster-05.png", alt: "Bobbi Brown DJ Night vinyl poster" },
+      { src: "/images/adobe-poster-06.png", alt: "Bobbi Brown lights up Spazaram poster" },
     ],
   },
 ];
@@ -290,19 +297,18 @@ export const skills = [
 ];
 
 export const photos = [
-  {
-    src: "/images/ExspkDHiOy6XnbnShbdiHa03Gg.jpg",
-    alt: "Field of yellow black-eyed Susans",
-  },
-  {
-    src: "/images/31Js0UzxEmcLYCaPd5rQH8u8L24.jpg",
-    alt: "Red berries on green leaves",
-  },
-  {
-    src: "/images/vIC6ZWIc2yxb3ahAI0Uo15vd1Y.jpg",
-    alt: "Swallowtail butterfly on pine needles",
-  },
+  { src: "/images/photo-01.jpg", alt: "Swallowtail butterfly on pine needles" },
+  { src: "/images/photo-02.jpg", alt: "Mallard swimming in a pond" },
+  { src: "/images/photo-03.jpg", alt: "Red berries on green leaves" },
+  { src: "/images/photo-04.jpg", alt: "Field of yellow black-eyed Susans" },
+  { src: "/images/photo-05.jpg", alt: "Fallen autumn leaves along a curb" },
+  { src: "/images/photo-06.jpg", alt: "Railroad tracks through autumn trees" },
+  { src: "/images/photo-07.jpg", alt: "River through a green valley" },
+  { src: "/images/photo-08.jpg", alt: "Purple jellyfish in dark water" },
+  { src: "/images/photo-09.jpg", alt: "Hillside town lit up at night" },
 ];
+
+export const photographyPreview = photos.slice(0, 3);
 
 export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);

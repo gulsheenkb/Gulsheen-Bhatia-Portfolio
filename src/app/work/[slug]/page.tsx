@@ -60,7 +60,13 @@ export default async function ProjectPage({ params }: Props) {
         ))}
       </div>
       {project.gallery?.length ? (
-        <div className="mt-12 flex flex-col gap-8">
+        <div
+          className={
+            project.galleryLayout === "grid"
+              ? "mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2"
+              : "mt-12 flex flex-col gap-8"
+          }
+        >
           {project.gallery.map((image) => (
             <Image
               key={image.src}

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
 import { ProjectCard } from "@/components/project-card";
-import { photos, projects, site, skills } from "@/lib/content";
+import { photographyPreview, projects, site, skills } from "@/lib/content";
 
 export default function HomePage() {
   return (
@@ -96,7 +96,7 @@ export default function HomePage() {
             <Link href="/photography">Photography</Link>
           </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {photos.map((photo) => (
+            {photographyPreview.map((photo) => (
               <Link
                 key={photo.src}
                 href="/photography"
