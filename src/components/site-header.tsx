@@ -16,11 +16,15 @@ import {
 import { site } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
-const links = [
+const links: { href: string; label: string; external?: boolean }[] = [
   { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
   { href: "/photography", label: "Photography" },
-  { href: "/contact", label: "Contact" },
+  {
+    href: site.linkedin,
+    label: "Connect",
+    external: true,
+  },
 ];
 
 export function SiteHeader() {
@@ -52,11 +56,15 @@ export function SiteHeader() {
         >
           {links.map((link) => {
             const active =
-              pathname === link.href || pathname.startsWith(`${link.href}/`);
+              !link.external &&
+              (pathname === link.href || pathname.startsWith(`${link.href}/`));
             return (
               <Link
                 key={link.href}
                 href={link.href}
+                {...(link.external
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
                 className={cn(
                   "rounded-full px-3.5 py-1.5 transition hover:bg-[#fde8e8]/70",
                   active && "bg-[#fde8e8]",
@@ -86,12 +94,16 @@ export function SiteHeader() {
             <nav className="mt-6 flex flex-col gap-1" aria-label="Mobile">
               {links.map((link) => {
                 const active =
-                  pathname === link.href ||
-                  pathname.startsWith(`${link.href}/`);
+                  !link.external &&
+                  (pathname === link.href ||
+                    pathname.startsWith(`${link.href}/`));
                 return (
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
+                      {...(link.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
                       className={cn(
                         "rounded-full px-3 py-3 text-lg font-medium hover:bg-[#fde8e8]/70",
                         active && "bg-[#fde8e8]",
