@@ -10,13 +10,13 @@ export default function AboutPage() {
   return (
     <article className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
       <div className="grid items-center gap-10 lg:grid-cols-2">
-        <div className="relative mx-auto w-full max-w-sm overflow-hidden rounded-full">
+        <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-full">
           <Image
-            src="/images/NKKuBY6BDu9VaLCFPsWze8Vjk.png"
+            src="/images/about-portrait.png"
             alt="Gulsheen Bhatia"
-            width={660}
-            height={864}
-            className="h-auto w-full"
+            width={748}
+            height={756}
+            className="h-full w-full object-cover object-[50%_18%]"
             priority
           />
         </div>
