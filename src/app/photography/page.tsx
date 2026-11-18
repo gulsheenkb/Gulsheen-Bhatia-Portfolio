@@ -8,21 +8,20 @@ export const metadata: Metadata = {
 
 export default function PhotographyPage() {
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-      <h1 className="mb-10 text-center font-display text-3xl font-semibold sm:text-4xl">
+    <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+      <h1 className="mb-10 font-display text-3xl font-semibold sm:text-5xl">
         PHOTOGRAPHY
       </h1>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <div className="flex flex-col gap-8">
         {photos.map((photo) => (
-          <div key={photo.src} className="relative aspect-[4/5]">
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 100vw, 33vw"
-            />
-          </div>
+          <Image
+            key={photo.src}
+            src={photo.src}
+            alt={photo.alt}
+            width={1600}
+            height={1200}
+            className="h-auto w-full"
+          />
         ))}
       </div>
     </div>

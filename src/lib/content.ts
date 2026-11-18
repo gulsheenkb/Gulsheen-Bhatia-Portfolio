@@ -276,6 +276,9 @@ export const projects: Project[] = [
         ],
       },
     ],
+    gallery: [
+      { src: "/images/tEjZDLkvHBjbwmy32rmgxb7SeI.png", alt: "Adobe Creative Cloud" },
+    ],
   },
 ];
 
