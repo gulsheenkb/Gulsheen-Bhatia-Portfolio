@@ -35,16 +35,6 @@ export default async function ProjectPage({ params }: Props) {
           {[project.role, project.duration].filter(Boolean).join(" · ")}
         </p>
       )}
-      <div className="relative mt-8 aspect-square max-h-[420px] w-full overflow-hidden rounded-[30px] border-[5px] border-blush-strong bg-white">
-        <Image
-          src={project.cover}
-          alt={project.coverAlt}
-          fill
-          className="object-cover"
-          sizes="(max-width: 896px) 100vw, 672px"
-          priority
-        />
-      </div>
       <p className="mt-8 leading-relaxed">{project.summary}</p>
       <div className="mt-10 space-y-10">
         {project.sections.map((section) => (
@@ -70,12 +60,12 @@ export default async function ProjectPage({ params }: Props) {
         ))}
       </div>
       {project.gallery?.length ? (
-        <div className="mt-12 grid gap-6">
+        <div className="mt-12 flex flex-col gap-8">
           {project.gallery.map((image) => (
             <Image
               key={image.src}
               src={image.src}
-              alt={image.alt}
+              alt={image.alt || project.title}
               width={1400}
               height={900}
               className="h-auto w-full"
